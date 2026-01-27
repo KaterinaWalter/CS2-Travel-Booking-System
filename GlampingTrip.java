@@ -15,12 +15,26 @@ public class GlampingTrip {
         this.isOutdoorsy = true;
         this.totalCost = processFee * this.durationInDays; // calculation
     }
-    public GlampingTrip(String name, String destination, int duration, boolean outdoorsy) {
-        this.travelerName = name; // set instance variable to client-provided value
-        this.destination = destination;
-        this.durationInDays = duration;
-        this.isOutdoorsy = outdoorsy;
+    public GlampingTrip(String n, String des, int dur, boolean o) {
+        this.travelerName = n; // set instance variable to client-provided value
+        this.destination = des;
+        this.durationInDays = dur;
+        this.isOutdoorsy = o;
         this.totalCost = processFee * this.durationInDays; // calculation
     }
+
+    // GETTERS (one for each inst. var.)
+
+    // SETTERS (for each inst. var. EXCEPT totalCost)
+    public void setDurationInDays(int newDuration) {
+        this.durationInDays = newDuration;
+    }
+
+    // Special setter for totalCost just RECALCULATES cost
+    public void setTotalCost() {
+        this.totalCost = processFee * this.durationInDays;
+    }
+
+    // toString (see example on course site)
 
 }
